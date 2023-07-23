@@ -1,0 +1,24 @@
+<div class="container">
+  <div>
+    <label for="inputWords">Kelimeleri Girin (Boşlukla Ayırarak):</label>
+    <input [(ngModel)]="inputWords" name="inputWords" type="text" (input)="onInputWordsChange()" (keyup.space)="onSpaceKeyPressed()">
+  </div>
+
+  <div *ngIf="randomSentence">
+    <h3>Rastgele Cümle:</h3>
+    <p>{{ randomSentence }}</p>
+  </div>
+
+  <div>
+    <h3>Eşleşen Kelimeler:</h3>
+    <p>
+      <span *ngFor="let matchedWord of matchedWords" [ngClass]="{ 'green': matchedWord.isMatched, 'red': !matchedWord.isMatched }">
+        {{ matchedWord.word }}&nbsp;
+      </span>
+    </p>
+  </div>
+
+  <div>
+    <button (click)="generateRandomSentence()">Rastgele Cümle Üret</button>
+  </div>
+</div>

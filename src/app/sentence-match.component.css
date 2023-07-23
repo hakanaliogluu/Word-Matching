@@ -1,0 +1,66 @@
+/* Basit bir stil */
+/* Orta hizalama için stil */
+
+  
+.container 
+{
+    margin-top: 200px;
+    margin-left: 375px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+    background-color: #1c1c1c;
+    color: white;
+}
+  
+
+div {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  p {
+    font-size: 18px;
+  }
+  
+  /* Estetik stil */
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+  }
+  
+  span {
+    padding: 2px;
+    margin: 2px;
+    border-radius: 4px;
+  }
+  
+  span.green {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  span.red {
+    background-color: #dc3545;
+    color: white;
+  }
+  
