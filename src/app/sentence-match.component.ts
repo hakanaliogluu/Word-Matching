@@ -23,6 +23,8 @@ export class SentenceMatchComponent {
   generateRandomSentence(): void {
     this.randomSentence = this.sentenceGeneratorService.getRandomSentence();
     this.matchedWords = []; this.matchedWords = this.randomSentence.split(' ').map(word => ({ word: word, isMatched: false }));
+    // Input'u sıfırlama
+    this.inputWords = '';
   }
 
   onInputWordsChange() {

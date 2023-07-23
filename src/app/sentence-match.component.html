@@ -1,24 +1,38 @@
-<div class="container">
-  <div>
-    <label for="inputWords">Kelimeleri Girin (Boşlukla Ayırarak):</label>
-    <input [(ngModel)]="inputWords" name="inputWords" type="text" (input)="onInputWordsChange()" (keyup.space)="onSpaceKeyPressed()">
+<div class="container mt-5">
+
+  <div class="row mb-3" style="margin-top: 50px;">
+    <div class="col">
+      <label for="inputWords">Kelimeleri Girin (Boşlukla Ayırarak):</label>
+      <input [(ngModel)]="inputWords" name="inputWords" type="text" class="form-control" (input)="onInputWordsChange()" 
+        (keyup.space)="onSpaceKeyPressed()" style="margin-top: 5px;">
+    </div>
   </div>
 
-  <div *ngIf="randomSentence">
-    <h3>Rastgele Cümle:</h3>
-    <p>{{ randomSentence }}</p>
+  <div class="row mb-3">
+    <div class="col">
+      <button class="btn btn-primary" (click)="generateRandomSentence()">Rastgele Cümle Üret</button>
+    </div>
   </div>
 
-  <div>
-    <h3>Eşleşen Kelimeler:</h3>
-    <p>
-      <span *ngFor="let matchedWord of matchedWords" [ngClass]="{ 'green': matchedWord.isMatched, 'red': !matchedWord.isMatched }">
-        {{ matchedWord.word }}&nbsp;
-      </span>
-    </p>
+  <div *ngIf="randomSentence" class="row mb-3">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">Rastgele Cümle:</h3>
+          <p class="card-text">{{ randomSentence }}</p>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div>
-    <button (click)="generateRandomSentence()">Rastgele Cümle Üret</button>
+  <div class="row">
+    <div class="col">
+      <h3>Eşleşen Kelimeler:</h3>
+      <p>
+        <span *ngFor="let matchedWord of matchedWords" [ngClass]="{ 'text-success': matchedWord.isMatched, 'text-danger': !matchedWord.isMatched }">
+          {{ matchedWord.word }}&nbsp;
+        </span>
+      </p>
+    </div>
   </div>
 </div>
